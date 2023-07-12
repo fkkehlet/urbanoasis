@@ -1,81 +1,72 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from '@layouts/Layout.astro';
+import Alpino from '@components/Alpino.astro';
+import SlideIn from '@effects/SlideIn.astro';
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
+  <main>
+    <header class="fixed top-0 z-50 w-full">
+      <SlideIn>
+        <div class="container mx-auto pl-4 text-zinc-950 md:px-10">
+          <a href="#"><img src="urbanoasis-tall.png" alt="" class="h-20 sm:h-28" /></a>
+        </div>
+      </SlideIn>
+      <!-- <div class="bg-zinc-950 py-0.5"></div> -->
+    </header>
+    <div
+      class="bg-[linear-gradient(to_right_bottom,rgba(49,84,44,0.8),rgba(16,71,52,0.8)),url('child-holding-pepper.webp')] bg-cover"
+    >
+      <header class="fixed top-0 w-full">
+        <div class="flex items-center bg-zinc-950 px-10 text-zinc-950">
+          <div class="h-16 sm:h-20"></div>
+        </div>
+        <!-- <div class="bg-zinc-950 py-0.5"></div> -->
+      </header>
+      <div class="container mx-auto pb-16 pt-64 lg:pb-24 lg:pt-80">
+        <div class="px-4 md:px-10">
+          <h1 class="text-3xl text-lime-200 sm:text-4xl lg:text-5xl">
+            Let's<br />cultivate<br /><span class="text-5xl font-bold sm:text-7xl lg:text-9xl">community.</span>
+          </h1>
+        </div>
+      </div>
+    </div>
+    <header class="sticky top-2 flex h-16 items-center bg-zinc-200 px-4 text-zinc-950 sm:top-4 sm:h-20 md:px-10">
+      <div class="container mx-auto">
+        <h2 class="text-end text-2xl font-bold underline-offset-0 sm:text-4xl"><u>OUR MISSION</u></h2>
+      </div>
+    </header>
+    <div class="bg-zinc-100">
+      <div class="container mx-auto px-4 py-80 md:px-10">
+        <p>
+          Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem
+          pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud
+          nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia
+          pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem
+          duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt
+          duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris
+          sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.
+        </p>
+      </div>
+    </div>
+    <header class="sticky top-4 flex h-16 items-center bg-lime-200 px-4 text-zinc-950 sm:top-8 sm:h-20 md:px-10">
+      <div class="container mx-auto">
+        <h2 class="text-underline text-end text-2xl font-bold underline-offset-0 sm:text-4xl"><u>VOLUNTEER</u></h2>
+      </div>
+    </header>
+    <div class="bg-lime-100">
+      <div class="container mx-auto px-4 py-80 md:px-10">
+        <p>
+          Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem
+          pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud
+          nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia
+          pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem
+          duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt
+          duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris
+          sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.
+        </p>
+        <div class="py-80"></div>
+      </div>
+    </div>
+  </main>
 </Layout>
-
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
