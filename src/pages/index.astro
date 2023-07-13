@@ -3,44 +3,48 @@ import Layout from '@layouts/Layout.astro';
 import SlideIn from '@effects/SlideIn.astro';
 ---
 
-<Layout title="Urban Oasis \\\\ Let's cultivate community.">
+<Layout title="Urban Oasis \\\\ Let's cultivate community">
   <main>
-    <header class="fixed top-0 z-50 w-full px-4 md:px-10">
+    <header class="fixed top-0 z-50 w-full px-4 md:px-6">
       <SlideIn>
-        <div class="container mx-auto opacity-95">
-          <a href="#"><img src="urbanoasis-tall.png" alt="" class="h-20 md:h-28" /></a>
+        <div class="container mx-auto opacity-90">
+          <a href="#"><img src="urbanoasis-tall.png" alt="" class="h-28 md:h-32" /></a>
         </div>
       </SlideIn>
       <!-- <div class="bg-zinc-950 py-0.5"></div> -->
     </header>
     <div
-      class="bg-[linear-gradient(90deg,rgba(49,84,44,1),rgba(16,71,52,0.5)),url('gardening-3.jpg')] bg-cover bg-center pb-16 pt-64 lg:pb-24 lg:pt-80"
+      class="bg-[linear-gradient(0deg,#1a2e05dd,#09090b),url('gardening-3.jpg')] bg-cover bg-center pb-24 pt-64 lg:pt-80"
     >
-      <header class="fixed top-0 z-40 w-full bg-clip-text backdrop-blur-xl">
+      <header class="fixed top-0 z-40 w-full bg-clip-text backdrop-blur-lg">
         <div class="flex items-center bg-zinc-950 opacity-60">
           <div class="h-16 md:h-20"></div>
         </div>
         <!-- <div class="bg-zinc-950 py-0.5"></div> -->
       </header>
-      <div class="px-4 md:px-10">
+      <div class="px-4 md:px-6">
         <div class="container mx-auto">
-          <h1 class="text-2xl text-lime-100 md:text-3xl">
-            Let's<br />cultivate<br /><span class="text-5xl font-bold md:text-8xl">\\community.</span>
+          <h1 class="text-2xl font-bold text-lime-50 md:text-3xl">
+            Let's<br />cultivate<br /><span
+              class="bg-gradient-to-r from-lime-500 to-lime-200 bg-clip-text text-5xl text-transparent md:text-8xl"
+            >
+              \\community
+            </span>
           </h1>
         </div>
       </div>
     </div>
-    <header class="sticky top-2 z-40 md:top-4">
-      <div class="absolute left-0 top-0 -z-10 h-16 w-1/2 bg-zinc-200 md:h-20"></div>
+    <header class="sticky top-4 z-40 md:top-4">
+      <div class="absolute left-0 top-0 -z-10 h-16 w-1/2 bg-lime-200 md:h-20"></div>
       <div class="container mx-auto">
-        <div class="flex h-16 items-center justify-end bg-zinc-200 px-4 md:h-20 md:px-10">
-          <h2 class="text-underline text-end text-2xl font-bold md:text-4xl">MISSION</h2>
+        <div class="flex h-16 items-center justify-end bg-lime-200 px-4 md:h-20 md:px-6">
+          <h2 class="text-underline text-end text-2xl font-bold md:text-2xl">MISSION.</h2>
         </div>
       </div>
     </header>
-    <div id="mission" class="-mt-16 bg-zinc-100 md:-mt-20">
-      <div class="h-16 w-full bg-zinc-200 md:h-20"></div>
-      <div class="container mx-auto flex items-center justify-between gap-20 px-4 py-16 md:px-10">
+    <div id="mission" class="-mt-16 bg-zinc-50 md:-mt-20">
+      <div class="h-16 w-full bg-lime-200 md:h-20"></div>
+      <div class="container mx-auto flex flex-wrap items-center justify-between gap-16 px-4 py-16 md:px-6">
         <div class="max-w-prose">
           <div class="space-y-6 text-xl">
             <p>
@@ -59,49 +63,114 @@ import SlideIn from '@effects/SlideIn.astro';
               network where individuals can exchange ideas, recipes, and traditions.
             </p>
             <p>
-              Moreover, gardening serves as a catalyst for cultivating healthy living. Engaging in physical activity
-              while gardening provides numerous health benefits. Additionally, it encourages us to consume a more
-              nutritious diet with firsthand access to fresh produce rich in vitamins, minerals, and antioxidants.
+              Moreover, gardening serves as a catalyst for cultivating healthy living. Not only does engaging in
+              physical activity while gardening provide numerous health benefits, firsthand access to fresh produce rich
+              in vitamins, minerals, and antioxidants encourages us to consume a more nutritious diet.
             </p>
           </div>
         </div>
-        <div class="max-w-md bg-gradient-to-br from-yellow-200 to-yellow-950">
-          <img src="gardening-2.jpg" alt="" class="opacity-50" />
+        <div class="h-full max-w-md flex-auto bg-gradient-to-br from-yellow-500 to-pink-500 p-3">
+          <img src="gardening-2.jpg" alt="" class="opacity-60" />
         </div>
       </div>
     </div>
-    <header class="sticky top-4 z-40 md:top-8">
-      <div class="absolute left-0 top-0 -z-10 h-16 w-1/2 bg-lime-200 md:h-20"></div>
+    <header class="sticky top-8 z-40 md:top-8">
+      <div class="absolute left-0 top-0 -z-10 h-16 w-1/2 bg-zinc-950 md:h-20"></div>
       <div class="container mx-auto">
-        <div class="flex h-16 items-center justify-end bg-lime-200 px-4 md:mr-60 md:h-20 md:px-10">
-          <h2 class="text-underline z-50 text-end text-2xl font-bold md:text-4xl">VOLUNTEER</h2>
+        <div class="flex h-16 items-center justify-end bg-zinc-950 px-4 text-lime-200 md:mr-44 md:h-20 md:px-6">
+          <h2 class="text-underline z-50 text-end text-2xl font-bold md:text-2xl">VOLUNTEER.</h2>
         </div>
       </div>
     </header>
-    <div id="volunteer" class="-mt-16 bg-lime-100 md:-mt-20">
-      <div class="h-16 w-full bg-lime-200 md:h-20"></div>
-      <div class="container mx-auto px-4 py-16 md:px-10">
+    <div id="volunteer" class="-mt-16 bg-zinc-50 md:-mt-20">
+      <div class="h-16 w-full bg-zinc-950 md:h-20"></div>
+      <div class="container mx-auto flex flex-wrap items-start justify-between gap-16 space-y-16 px-4 py-16 md:px-6">
+        <div class="max-w-md bg-gradient-to-br from-yellow-400 to-pink-400 p-3">
+          <img src="gardening.jpg" alt="" class="opacity-60" />
+        </div>
         <div class="max-w-prose">
           <div class="space-y-6 text-xl">
             <p>
-              To turn this vision into reality, we extend an invitation for you to join us on this transformative
-              journey. Together, we can create sustainable and thriving gardens throughout the Indianapolis area,
-              strengthening community bonds and promoting healthier lifestyles.
+              To turn our vision into our reality, we extend an invitation for you to join us on this transformative
+              journey. Whether you have prior gardening experience or not, we'd love for you to join us in our mission.
             </p>
-            <p>
-              Whether you have prior gardening experience or are new to this fulfilling endeavor, your involvement will
-              contribute to the collective success of our gardening initiatives. Let us join forces, sow the seeds of
-              change, and cultivate a better future for everyone in our community here in Indianapolis.
-            </p>
+            <p><strong>Let's cultivate a better future for communities in the Indianapolis area, together.</strong></p>
+            <form class="space-y-8 bg-zinc-100 p-8 drop-shadow-xl" action="">
+              <div class="space-y-4">
+                <div class="flex flex-col gap-1">
+                  <input
+                    class="border-2 border-zinc-300 p-3 text-lg"
+                    id="name"
+                    type="text"
+                    placeholder="Name"
+                    required
+                  />
+                </div>
+                <div class="flex flex-col gap-1">
+                  <input
+                    class="border-2 border-zinc-300 p-3 text-lg"
+                    id="email"
+                    type="email"
+                    placeholder="Email"
+                    required
+                  />
+                </div>
+              </div>
+              <button class="w-full bg-pink-400 p-3 hover:bg-zinc-300" type="submit">
+                <strong>Let's cultivate community!</strong>
+              </button>
+            </form>
           </div>
         </div>
+      </div>
+    </div>
 
-        <form action="">
-          <label for=""></label>
-          <input type="text" />
-        </form>
-
-        <div class="py-80"></div>
+    <header class="sticky top-12 z-40 md:top-12">
+      <div class="absolute left-0 top-0 -z-10 h-16 w-1/2 bg-lime-200 md:h-20"></div>
+      <div class="container mx-auto">
+        <div class="flex h-16 items-center justify-end bg-lime-200 px-4 text-zinc-950 md:mr-96 md:h-20 md:px-6">
+          <h2 class="text-underline z-50 text-end text-2xl font-bold md:text-2xl">LEADERSHIP.</h2>
+        </div>
+      </div>
+    </header>
+    <div id="leadership" class="-mt-16 bg-zinc-950 text-zinc-100 md:-mt-20">
+      <div class="h-16 w-full bg-lime-200 md:h-20"></div>
+      <div class="container mx-auto flex flex-col space-y-32 px-4 py-16 md:px-6">
+        <div class="grid grid-cols-2 gap-x-32 gap-y-16 self-center">
+          <div class="flex flex-col items-center gap-4 text-center">
+            <img class="rounded-full border-4 border-zinc-950" src="grant-racop.webp" alt="" />
+            <h3 class="-mt-20 w-full bg-zinc-950 pt-4 md:text-xl">
+              <strong>CHAIRMAN</strong><br />
+              Grant Racop
+            </h3>
+            <p>Indiana University Alumnus, McKinney School of Law, J.D. Candidate</p>
+          </div>
+          <div class="flex flex-col items-center gap-4 text-center">
+            <img class="rounded-full border-4 border-zinc-950" src="kai-gonzalez.webp" alt="" />
+            <h3 class="-mt-20 w-full bg-zinc-950 pt-4 md:text-xl">
+              <strong>PRESIDENT</strong><br />
+              Kai Gonzalez
+            </h3>
+            <p>Indiana University Alumnus, Kelley School of Business, Pre-Law</p>
+          </div>
+          <div class="flex flex-col items-center gap-4 text-center">
+            <img class="rounded-full border-4 border-zinc-950" src="alex-belyayev.webp" alt="" />
+            <h3 class="-mt-20 w-full bg-zinc-950 pt-4 md:text-xl">
+              <strong>OPERATIONS DIRECTOR</strong><br />
+              Alex Belyayev
+            </h3>
+            <p class="">Indiana University Alumnus</p>
+          </div>
+          <div class="flex flex-col items-center gap-4 text-center">
+            <img class="rounded-full border-4 border-zinc-950" src="ethan-gonzalez.webp" alt="" />
+            <h3 class="-mt-20 w-full bg-zinc-950 pt-4 md:text-xl">
+              <strong>FINANCE DIRECTOR</strong><br />
+              Ethan Gonzalez
+            </h3>
+            <p>Indiana University Alumnus, Kelley School of Business</p>
+          </div>
+        </div>
+        <p class="text-center"><i>&copy; Urban Oasis 2023</i></p>
       </div>
     </div>
   </main>
