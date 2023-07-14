@@ -103,33 +103,38 @@ import SlideIn from '@effects/SlideIn.astro';
         <!--<div class="max-w-md bg-gradient-to-br from-yellow-400 to-pink-400 p-3">
           <img src="gardening.jpg" alt="" class="opacity-60" />
 </div>-->
-        <div class="space-y-16 text-xl">
-          <div class="mx-auto max-w-prose space-y-5 text-center text-xl">
+        <div class="space-y-8 text-xl">
+          <div class="mx-auto max-w-prose space-y-16 text-center text-xl">
             <p>
               To turn our vision into reality, we extend an invitation for you to join us on this transformative
               journey. Whether you have prior gardening experience or not, we'd love for you to join us in our mission.
             </p>
             <p class="text-center text-3xl">
-              <strong>Let's cultivate a better future for communities in the Indianapolis area, together.</strong>
+              <strong>
+                Let's cultivate a <span class="underline decoration-pink-400 decoration-4">brighter future</span> for communities
+                in the Indianapolis area, together.
+              </strong>
             </p>
           </div>
-          <form class="mx-auto max-w-prose space-y-10 p-1" action="">
+          <form class="mx-auto max-w-prose space-y-14 p-1" action="">
             <div class="space-y-6">
-              <div class="flex flex-col gap-1 bg-gradient-to-br from-yellow-400 to-pink-400 p-1">
+              <div class="flex flex-col gap-1">
+                <label for="name">Your name</label>
                 <input
-                  class="p-3 text-lg placeholder:text-zinc-400 focus:ring-4 focus:ring-sky-200"
+                  class="border-2 border-zinc-300 bg-zinc-100 p-3 text-lg placeholder:text-zinc-400"
                   id="name"
                   type="text"
-                  placeholder="Name"
+                  placeholder="John Doe"
                   required
                 />
               </div>
-              <div class="flex flex-col gap-1 bg-gradient-to-br from-yellow-400 to-pink-400 p-1">
+              <div class="flex flex-col gap-1">
+                <label for="email">Your email</label>
                 <input
-                  class="p-3 text-lg placeholder:text-zinc-400 focus:ring-4 focus:ring-sky-200"
+                  class="border-2 border-zinc-300 bg-zinc-100 p-3 text-lg placeholder:text-zinc-400"
                   id="email"
                   type="email"
-                  placeholder="Email"
+                  placeholder="johndoe@example.com"
                   required
                 />
               </div>
@@ -138,7 +143,7 @@ import SlideIn from '@effects/SlideIn.astro';
               class="w-full -rotate-2 bg-gradient-to-br from-yellow-400 to-pink-400 p-5 transition hover:rotate-2 focus:rotate-2"
               type="submit"
             >
-              <strong class="text-2xl">Join the movement!</strong>
+              <strong class="text-2xl">Volunteer with us!</strong>
             </button>
           </form>
         </div>
@@ -156,38 +161,46 @@ import SlideIn from '@effects/SlideIn.astro';
     <div id="leadership" class="-mt-16 bg-zinc-950 text-zinc-100">
       <div class="h-16 w-full bg-lime-200"></div>
       <div class="container mx-auto flex flex-col space-y-32 px-5 py-16">
-        <div class="grid max-w-4xl grid-cols-1 gap-x-16 gap-y-12 self-center sm:grid-cols-2 md:gap-x-32 md:gap-y-16">
-          <div class="flex flex-col items-center gap-4 text-center">
-            <img class="rounded-full border-4 border-zinc-950" src="grant-racop.webp" alt="" />
+        <div class="grid max-w-4xl grid-cols-1 gap-x-16 gap-y-12 self-center sm:grid-cols-2 lg:gap-x-32 lg:gap-y-16">
+          <div class="mx-auto flex max-w-xs flex-col items-center gap-4 text-center">
+            <div class="rounded-full bg-gradient-to-br from-yellow-400 to-pink-400 p-3">
+              <img class="rounded-full border-8 border-zinc-950" src="grant-racop.webp" alt="" />
+            </div>
             <h3 class="-mt-12 w-full bg-zinc-950 pt-4 md:-mt-20 md:text-xl">
               <strong>CHAIRMAN</strong><br />
               Grant Racop
             </h3>
-            <p class="text-sm">Indiana University Alumnus, McKinney School of Law, J.D. Candidate</p>
+            <p class="text-sm">Indiana University Alumnus,<br />McKinney School of Law,<br />J.D. Candidate</p>
           </div>
-          <div class="flex flex-col items-center gap-4 text-center">
-            <img class="rounded-full border-4 border-zinc-950" src="kai-gonzalez.webp" alt="" />
+          <div class="mx-auto flex max-w-xs flex-col items-center gap-4 text-center">
+            <div class="rounded-full bg-gradient-to-br from-yellow-400 to-pink-400 p-3">
+              <img class="rounded-full border-8 border-zinc-950" src="kai-gonzalez.webp" alt="" />
+            </div>
             <h3 class="-mt-12 w-full bg-zinc-950 pt-4 md:-mt-20 md:text-xl">
               <strong>PRESIDENT</strong><br />
               Kai Gonzalez
             </h3>
-            <p class="text-sm">Indiana University Alumnus, Kelley School of Business, Pre-Law</p>
+            <p class="text-sm">Indiana University Alumnus,<br />Kelley School of Business,<br />Pre-Law</p>
           </div>
-          <div class="flex flex-col items-center gap-4 text-center">
-            <img class="rounded-full border-4 border-zinc-950" src="alex-belyayev.webp" alt="" />
+          <div class="mx-auto flex max-w-xs flex-col items-center gap-4 text-center">
+            <div class="rounded-full bg-gradient-to-br from-yellow-400 to-pink-400 p-3">
+              <img class="rounded-full border-8 border-zinc-950" src="alex-belyayev.webp" alt="" />
+            </div>
             <h3 class="-mt-12 w-full bg-zinc-950 pt-4 md:-mt-20 md:text-xl">
               <strong>OPERATIONS DIRECTOR</strong><br />
               Alex Belyayev
             </h3>
             <p class="text-sm">Indiana University Alumnus</p>
           </div>
-          <div class="flex flex-col items-center gap-4 text-center">
-            <img class="rounded-full border-4 border-zinc-950" src="ethan-gonzalez.webp" alt="" />
+          <div class="mx-auto flex max-w-xs flex-col items-center gap-4 text-center">
+            <div class="rounded-full bg-gradient-to-br from-yellow-400 to-pink-400 p-3">
+              <img class="rounded-full border-8 border-zinc-950" src="ethan-gonzalez.webp" alt="" />
+            </div>
             <h3 class="-mt-12 w-full bg-zinc-950 pt-4 md:-mt-20 md:text-xl">
               <strong>FINANCE DIRECTOR</strong><br />
               Ethan Gonzalez
             </h3>
-            <p class="text-sm">Indiana University Alumnus, Kelley School of Business</p>
+            <p class="text-sm">Indiana University Alumnus,<br />Kelley School of Business</p>
           </div>
         </div>
         <div class="space-y-5">
