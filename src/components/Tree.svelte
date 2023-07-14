@@ -13,7 +13,7 @@
             path.style.transition = `${duration/1000/10}s`;
             path.classList.add('fill-pink-100');
         });
-    }, duration * 0.5));
+    }, duration * 0.45));
 </script>
 
 
