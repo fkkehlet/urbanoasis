@@ -1,21 +1,13 @@
 ---
-const { delay = 0 } = Astro.props;
+const { class: className } = Astro.props;
 ---
 
-<div
-  x-data="{ v: false }"
-  x-cloak
-  x-intersect.once="v = true"
-  class="start"
-  :class="{ 'end': v }"
-  style={`transition-delay: ${delay}`}
->
+<div x-data class={`start transition duration-1000 ${className}`} x-intersect.once="$el.classList.add('end')">
   <slot />
 </div>
 
 <style>
   .start {
-    transition: 1000ms;
     opacity: 0%;
     transform: translateX(-20rem);
   }

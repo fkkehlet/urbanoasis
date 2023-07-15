@@ -1,20 +1,19 @@
 <script>
-  const animated = document.querySelector('#credits');
+  const credits = document.querySelector('#credits');
 
-  animated.addEventListener('animationend', () => {
-    animated?.classList.add('finished-typing');
+  credits.addEventListener('animationend', () => {
+    credits.classList.add('end');
   });
 </script>
 
-<span
+<div
   id="credits"
-  x-data="{ v: false }"
-  x-intersect.once="setTimeout(() => {v = true}, 1500)"
+  x-data
   class="start border-r-2"
-  :class="{ 'trigger': v }"
+  x-intersect.once="setTimeout(() => {$el.classList.add('trigger')}, 1500)"
 >
-  <slot />
-</span>
+  <p><i>Design and development by <a href="https://vaut.io" target="_blank"><u>vaut.io</u></a></i></p>
+</div>
 
 <style>
   .start {
@@ -32,7 +31,7 @@
     animation: typing 4.95s steps(33, end), blink-caret 0.3s step-end infinite;
   }
 
-  .finished-typing {
+  .end {
     width: 100%;
     animation: blink-caret 1.2s step-end infinite;
   }

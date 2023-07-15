@@ -1,10 +1,10 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import Credits from '@components/Credits.astro';
 import Tree from '@components/Tree.svelte';
 import TopEntry from '@effects/TopEntry.astro';
 import LeftEntry from '@effects/LeftEntry.astro';
 import RightEntry from '@effects/RightEntry.astro';
-import TypeEntry from '@effects/TypeEntry.astro';
 ---
 
 <Layout title="Urban Oasis \\ Let's cultivate community">
@@ -27,9 +27,9 @@ import TypeEntry from '@effects/TypeEntry.astro';
       <div class="px-5">
         <div class="container mx-auto">
           <h1 class="text-xl font-bold text-lime-100 md:text-3xl">
-            <LeftEntry delay="1000ms">Let's<br /></LeftEntry>
-            <RightEntry delay="2000ms">cultivate<br /></RightEntry>
-            <LeftEntry delay="3000ms">
+            <LeftEntry class="delay-[1000ms]">Let's<br /></LeftEntry>
+            <RightEntry class="delay-[2000ms]">cultivate<br /></RightEntry>
+            <LeftEntry class="delay-[3000ms]">
               <span
                 class="bg-gradient-to-r from-lime-400 to-lime-200 bg-clip-text text-5xl text-transparent md:text-7xl"
               >
@@ -64,7 +64,7 @@ import TypeEntry from '@effects/TypeEntry.astro';
         <div class="relative space-y-24 px-5 pb-16 pt-8 md:flex md:flex-col md:space-y-16">
           <LeftEntry>
             <div
-              class="max-w-md -rotate-6 space-y-5 border-2 border-zinc-950 bg-zinc-50 p-5 shadow-md shadow-zinc-200 max-md:mx-auto md:self-start"
+              class="max-w-md -rotate-6 space-y-5 border-2 border-zinc-950 bg-zinc-50/90 p-5 shadow-md shadow-zinc-300 max-md:mx-auto md:self-start"
             >
               <h3 class="text-3xl font-bold">Empowering<br />independence.</h3>
               <p class="text-justify">
@@ -74,11 +74,9 @@ import TypeEntry from '@effects/TypeEntry.astro';
               </p>
             </div>
           </LeftEntry>
-          <div class="max-md:mx-auto md:self-end">
+          <div class="max-w-md max-md:mx-auto md:self-end">
             <RightEntry>
-              <div
-                class="max-w-md rotate-6 space-y-5 border-2 border-zinc-950 bg-zinc-50 p-5 shadow-md shadow-zinc-200"
-              >
+              <div class="rotate-6 space-y-5 border-2 border-zinc-950 bg-zinc-50/90 p-5 shadow-md shadow-zinc-300">
                 <h3 class="text-3xl font-bold">Forging<br />bonds.</h3>
                 <p class="text-justify">
                   Working together in shared garden spaces forges tight-knit relationships and fosters a sense of unity
@@ -90,7 +88,7 @@ import TypeEntry from '@effects/TypeEntry.astro';
           </div>
           <LeftEntry>
             <div
-              class="max-w-md -rotate-6 space-y-5 border-2 border-zinc-950 bg-zinc-50 p-5 shadow-md shadow-zinc-200 max-md:mx-auto md:self-start"
+              class="max-w-md -rotate-6 space-y-5 border-2 border-zinc-950 bg-zinc-50/90 p-5 shadow-md shadow-zinc-300 max-md:mx-auto md:self-start"
             >
               <h3 class="text-3xl font-bold">Inspiring<br />health.</h3>
               <p class="text-justify">
@@ -182,10 +180,10 @@ import TypeEntry from '@effects/TypeEntry.astro';
           <div class="isolate mx-auto flex max-w-xs flex-col items-center gap-4 text-center">
             <div class="relative -z-10">
               <div
-                class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-zinc-700 to-zinc-950 p-2"
+                class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-zinc-400 to-zinc-950 p-2"
               >
               </div>
-              <img class="rounded-full border-8 border-zinc-950" src="grant-racop.webp" alt="" />
+              <img class="rounded-full grayscale" src="grant.png" alt="" />
             </div>
             <h3 class="-mt-12 w-full bg-zinc-950 pt-4 md:-mt-20 md:text-xl">
               <strong>CHAIRMAN</strong><br />
@@ -196,10 +194,10 @@ import TypeEntry from '@effects/TypeEntry.astro';
           <div class="isolate mx-auto flex max-w-xs flex-col items-center gap-4 text-center">
             <div class="relative -z-10">
               <div
-                class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-zinc-700 to-zinc-950 p-2"
+                class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-zinc-400 to-zinc-950 p-2"
               >
               </div>
-              <img class="rounded-full border-8 border-zinc-950" src="kai-gonzalez.webp" alt="" />
+              <img class="rounded-full grayscale" src="kai.png" alt="" />
             </div>
             <h3 class="-mt-12 w-full bg-zinc-950 pt-4 md:-mt-20 md:text-xl">
               <strong>PRESIDENT</strong><br />
@@ -210,10 +208,10 @@ import TypeEntry from '@effects/TypeEntry.astro';
           <div class="isolate mx-auto flex max-w-xs flex-col items-center gap-4 text-center">
             <div class="relative -z-10">
               <div
-                class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-zinc-700 to-zinc-950 p-2"
+                class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-zinc-400 to-zinc-950 p-2"
               >
               </div>
-              <img class="rounded-full border-8 border-zinc-950" src="alex-belyayev.webp" alt="" />
+              <img class="rounded-full grayscale" src="alex.png" alt="" />
             </div>
             <h3 class="-mt-12 w-full bg-zinc-950 pt-4 md:-mt-20 md:text-xl">
               <strong>OPERATIONS DIRECTOR</strong><br />
@@ -224,10 +222,10 @@ import TypeEntry from '@effects/TypeEntry.astro';
           <div class="isolate mx-auto flex max-w-xs flex-col items-center gap-4 text-center">
             <div class="relative -z-10">
               <div
-                class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-zinc-700 to-zinc-950 p-2"
+                class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-zinc-400 to-zinc-950 p-2"
               >
               </div>
-              <img class="rounded-full border-8 border-zinc-950" src="ethan-gonzalez.webp" alt="" />
+              <img class="rounded-full grayscale" src="ethan.png" alt="" />
             </div>
             <h3 class="-mt-12 w-full bg-zinc-950 pt-4 md:-mt-20 md:text-xl">
               <strong>FINANCE DIRECTOR</strong><br />
@@ -238,9 +236,7 @@ import TypeEntry from '@effects/TypeEntry.astro';
         </div>
         <div class="mx-auto w-fit space-y-5 text-center">
           <p><i>&copy; 2023 Urban Oasis, Inc.</i></p>
-          <TypeEntry>
-            <p><i>Design and development by <a href="https://vaut.io" target="_blank"><u>vaut.io</u></a></i></p>
-          </TypeEntry>
+          <Credits />
         </div>
       </div>
     </div>
