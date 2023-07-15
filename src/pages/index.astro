@@ -4,6 +4,7 @@ import Tree from '@components/Tree.svelte';
 import TopEntry from '@effects/TopEntry.astro';
 import LeftEntry from '@effects/LeftEntry.astro';
 import RightEntry from '@effects/RightEntry.astro';
+import TypeEntry from '@effects/TypeEntry.astro';
 ---
 
 <Layout title="Urban Oasis \\ Let's cultivate community">
@@ -116,7 +117,7 @@ import RightEntry from '@effects/RightEntry.astro';
     <div id="volunteer" class="-mt-16 bg-zinc-50">
       <div class="h-16 w-full bg-zinc-950"></div>
       <div class="container mx-auto px-5 py-24">
-        <!--<div class="max-w-md bg-gradient-to-br from-yellow-400 to-pink-400 p-3">
+        <!--<div class="max-w-md bg-gradient-to-br from-zinc-700 to-zinc-950 p-3">
           <img src="gardening.jpg" alt="" class="opacity-60" />
 </div>-->
         <div class="space-y-8 text-xl">
@@ -156,7 +157,7 @@ import RightEntry from '@effects/RightEntry.astro';
               </div>
             </div>
             <button
-              class="w-full -rotate-2 bg-gradient-to-br from-yellow-400 to-pink-400 p-5 transition hover:rotate-2 focus:rotate-2"
+              class="w-full -rotate-2 bg-gradient-to-br from-yellow-400 to-pink-400 p-5 opacity-80 transition hover:rotate-2 hover:from-yellow-400 hover:to-pink-400 hover:opacity-100 focus:rotate-2 focus:from-yellow-400 focus:to-pink-400 focus:opacity-100"
               type="submit"
             >
               <strong class="text-2xl">Volunteer with us!</strong>
@@ -181,7 +182,7 @@ import RightEntry from '@effects/RightEntry.astro';
           <div class="isolate mx-auto flex max-w-xs flex-col items-center gap-4 text-center">
             <div class="relative -z-10">
               <div
-                class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-yellow-400 to-pink-400 p-2"
+                class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-zinc-700 to-zinc-950 p-2"
               >
               </div>
               <img class="rounded-full border-8 border-zinc-950" src="grant-racop.webp" alt="" />
@@ -195,7 +196,7 @@ import RightEntry from '@effects/RightEntry.astro';
           <div class="isolate mx-auto flex max-w-xs flex-col items-center gap-4 text-center">
             <div class="relative -z-10">
               <div
-                class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-yellow-400 to-pink-400 p-2"
+                class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-zinc-700 to-zinc-950 p-2"
               >
               </div>
               <img class="rounded-full border-8 border-zinc-950" src="kai-gonzalez.webp" alt="" />
@@ -209,7 +210,7 @@ import RightEntry from '@effects/RightEntry.astro';
           <div class="isolate mx-auto flex max-w-xs flex-col items-center gap-4 text-center">
             <div class="relative -z-10">
               <div
-                class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-yellow-400 to-pink-400 p-2"
+                class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-zinc-700 to-zinc-950 p-2"
               >
               </div>
               <img class="rounded-full border-8 border-zinc-950" src="alex-belyayev.webp" alt="" />
@@ -223,7 +224,7 @@ import RightEntry from '@effects/RightEntry.astro';
           <div class="isolate mx-auto flex max-w-xs flex-col items-center gap-4 text-center">
             <div class="relative -z-10">
               <div
-                class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-yellow-400 to-pink-400 p-2"
+                class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-zinc-700 to-zinc-950 p-2"
               >
               </div>
               <img class="rounded-full border-8 border-zinc-950" src="ethan-gonzalez.webp" alt="" />
@@ -235,9 +236,11 @@ import RightEntry from '@effects/RightEntry.astro';
             <p class="text-sm">Indiana University Alumnus,<br />Kelley School of Business</p>
           </div>
         </div>
-        <div class="space-y-5">
-          <p class="text-center"><i>&copy; 2023 Urban Oasis, Inc.</i></p>
-          <p class="text-center"><i>Design and development by <a href="https://vaut.io"><u>vaut.io</u></a></i></p>
+        <div class="mx-auto w-fit space-y-5 text-center">
+          <p><i>&copy; 2023 Urban Oasis, Inc.</i></p>
+          <TypeEntry>
+            <p><i>Design and development by <a href="https://vaut.io" target="_blank"><u>vaut.io</u></a></i></p>
+          </TypeEntry>
         </div>
       </div>
     </div>

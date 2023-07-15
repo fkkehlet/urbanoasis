@@ -1,0 +1,60 @@
+<script>
+  const animated = document.querySelector('#credits');
+
+  animated.addEventListener('animationend', () => {
+    animated?.classList.add('finished-typing');
+  });
+</script>
+
+<span
+  id="credits"
+  x-data="{ v: false }"
+  x-intersect.once="setTimeout(() => {v = true}, 1500)"
+  class="start border-r-2"
+  :class="{ 'trigger': v }"
+>
+  <slot />
+</span>
+
+<style>
+  .start {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    white-space: nowrap; /* Keeps the content on a single line */
+    width: 0;
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    display: inline-block;
+    margin-inline: auto;
+    font-family: 'Courier';
+    animation: blink-caret 0.6s step-end infinite;
+  }
+
+  .trigger {
+    animation: typing 4.95s steps(33, end), blink-caret 0.3s step-end infinite;
+  }
+
+  .finished-typing {
+    width: 100%;
+    animation: blink-caret 1.2s step-end infinite;
+  }
+
+  /* The typing effect */
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: #f472b6;
+    }
+  }
+</style>
