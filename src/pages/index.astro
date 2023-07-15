@@ -1,20 +1,22 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import Tree from '@components/Tree.svelte';
-import SlideIn from '@effects/SlideIn.astro';
+import TopEntry from '@effects/TopEntry.astro';
+import LeftEntry from '@effects/LeftEntry.astro';
+import RightEntry from '@effects/RightEntry.astro';
 ---
 
 <Layout title="Urban Oasis \\ Let's cultivate community">
-  <main>
+  <main class="overflow-x-clip">
     <header class="fixed top-0 z-50 w-full px-5">
-      <SlideIn>
+      <TopEntry>
         <div class="container mx-auto opacity-100">
           <a href="#"><img src="urbanoasis-tall.png" alt="" class="h-28" /></a>
         </div>
-      </SlideIn>
+      </TopEntry>
     </header>
     <div
-      class="bg-[linear-gradient(270deg,#1a2e0588,#09090bee),url('gardening-3.jpg')] bg-cover bg-center pb-24 pt-64 lg:pt-80"
+      class="bg-[linear-gradient(270deg,#1a2e0588,#09090bee),url('/gardening-3.jpg')] bg-cover bg-center pb-24 pt-64 lg:pt-80"
     >
       <header class="fixed top-0 z-40 w-full bg-clip-text backdrop-blur-lg">
         <div class="flex items-center bg-zinc-950 opacity-60">
@@ -24,11 +26,15 @@ import SlideIn from '@effects/SlideIn.astro';
       <div class="px-5">
         <div class="container mx-auto">
           <h1 class="text-xl font-bold text-lime-100 md:text-3xl">
-            Let's<br />cultivate<br /><span
-              class="bg-gradient-to-r from-lime-400 to-lime-200 bg-clip-text text-5xl text-transparent md:text-7xl"
-            >
-              \\community
-            </span>
+            <LeftEntry delay="1000ms">Let's<br /></LeftEntry>
+            <RightEntry delay="2000ms">cultivate<br /></RightEntry>
+            <LeftEntry delay="3000ms">
+              <span
+                class="bg-gradient-to-r from-lime-400 to-lime-200 bg-clip-text text-5xl text-transparent md:text-7xl"
+              >
+                \\community
+              </span>
+            </LeftEntry>
           </h1>
         </div>
       </div>
@@ -54,38 +60,48 @@ import SlideIn from '@effects/SlideIn.astro';
             sustainable and flourishing gardens become a reality, starting in the Indianapolis area.
           </p>
         </div>
-        <div class="relative space-y-24 overflow-hidden px-5 pb-32 pt-8 md:flex md:flex-col md:space-y-16">
-          <div
-            class="max-w-md -rotate-6 space-y-5 border-2 border-zinc-950 bg-zinc-50 p-5 shadow-md shadow-zinc-200 max-md:mx-auto md:self-start"
-          >
-            <h3 class="text-3xl font-bold">Empowering<br />independence.</h3>
-            <p class="text-justify">
-              The ability to grow a diverse range of fruits, vegetables, and herbs enables communities to become more
-              self-reliant, reduce dependence on external food sources, and ensure access to fresh, nutritious food
-              year-round.
-            </p>
+        <div class="relative space-y-24 px-5 pb-16 pt-8 md:flex md:flex-col md:space-y-16">
+          <LeftEntry>
+            <div
+              class="max-w-md -rotate-6 space-y-5 border-2 border-zinc-950 bg-zinc-50 p-5 shadow-md shadow-zinc-200 max-md:mx-auto md:self-start"
+            >
+              <h3 class="text-3xl font-bold">Empowering<br />independence.</h3>
+              <p class="text-justify">
+                The ability to grow a diverse range of fruits, vegetables, and herbs enables communities to become more
+                self-reliant, reduce dependence on external food sources, and ensure access to fresh, nutritious food
+                year-round.
+              </p>
+            </div>
+          </LeftEntry>
+          <div class="max-md:mx-auto md:self-end">
+            <RightEntry>
+              <div
+                class="max-w-md rotate-6 space-y-5 border-2 border-zinc-950 bg-zinc-50 p-5 shadow-md shadow-zinc-200"
+              >
+                <h3 class="text-3xl font-bold">Forging<br />bonds.</h3>
+                <p class="text-justify">
+                  Working together in shared garden spaces forges tight-knit relationships and fosters a sense of unity
+                  and togetherness, promoting a supportive network where individuals can exchange ideas, recipes, and
+                  traditions.
+                </p>
+              </div>
+            </RightEntry>
           </div>
-          <div
-            class="max-w-md rotate-6 space-y-5 border-2 border-zinc-950 bg-zinc-50 p-5 shadow-md shadow-zinc-200 max-md:mx-auto md:self-end"
-          >
-            <h3 class="text-3xl font-bold">Forging<br />bonds.</h3>
-            <p class="text-justify">
-              Working together in shared garden spaces forges tight-knit relationships and fosters a sense of unity and
-              togetherness, promoting a supportive network where individuals can exchange ideas, recipes, and
-              traditions.
-            </p>
+          <LeftEntry>
+            <div
+              class="max-w-md -rotate-6 space-y-5 border-2 border-zinc-950 bg-zinc-50 p-5 shadow-md shadow-zinc-200 max-md:mx-auto md:self-start"
+            >
+              <h3 class="text-3xl font-bold">Inspiring<br />health.</h3>
+              <p class="text-justify">
+                Not only does engaging in physical activity while gardening provide health benefits, firsthand access to
+                fresh produce rich in vitamins, minerals, and antioxidants encourages us to consume a more nutritious
+                diet.
+              </p>
+            </div>
+          </LeftEntry>
+          <div class="">
+            <Tree client:visible />
           </div>
-          <div
-            class="max-w-md -rotate-6 space-y-5 border-2 border-zinc-950 bg-zinc-50 p-5 shadow-md shadow-zinc-200 max-md:mx-auto md:self-start"
-          >
-            <h3 class="text-3xl font-bold">Inspiring<br />health.</h3>
-            <p class="text-justify">
-              Not only does engaging in physical activity while gardening provide health benefits, firsthand access to
-              fresh produce rich in vitamins, minerals, and antioxidants encourages us to consume a more nutritious
-              diet.
-            </p>
-          </div>
-          <Tree client:visible />
         </div>
       </div>
     </div>
@@ -104,15 +120,15 @@ import SlideIn from '@effects/SlideIn.astro';
           <img src="gardening.jpg" alt="" class="opacity-60" />
 </div>-->
         <div class="space-y-8 text-xl">
-          <div class="mx-auto max-w-prose space-y-16 text-center text-xl">
+          <div class="mx-auto max-w-prose space-y-20 text-center text-xl">
             <p>
               To turn our vision into reality, we extend an invitation for you to join us on this transformative
               journey. Whether you have prior gardening experience or not, we'd love for you to join us in our mission.
             </p>
             <p class="text-center text-3xl">
               <strong>
-                Let's cultivate a <span class="underline decoration-pink-400 decoration-4">brighter future</span> for communities
-                in the Indianapolis area, together.
+                Let's cultivate <span class="underline decoration-pink-400 decoration-4">community</span> in Indianapolis,
+                together.
               </strong>
             </p>
           </div>
@@ -162,8 +178,12 @@ import SlideIn from '@effects/SlideIn.astro';
       <div class="h-16 w-full bg-lime-200"></div>
       <div class="container mx-auto flex flex-col space-y-32 px-5 py-16">
         <div class="grid max-w-4xl grid-cols-1 gap-x-16 gap-y-12 self-center sm:grid-cols-2 lg:gap-x-32 lg:gap-y-16">
-          <div class="mx-auto flex max-w-xs flex-col items-center gap-4 text-center">
-            <div class="rounded-full bg-gradient-to-br from-yellow-400 to-pink-400 p-3">
+          <div class="isolate mx-auto flex max-w-xs flex-col items-center gap-4 text-center">
+            <div class="relative -z-10">
+              <div
+                class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-yellow-400 to-pink-400 p-2"
+              >
+              </div>
               <img class="rounded-full border-8 border-zinc-950" src="grant-racop.webp" alt="" />
             </div>
             <h3 class="-mt-12 w-full bg-zinc-950 pt-4 md:-mt-20 md:text-xl">
@@ -172,8 +192,12 @@ import SlideIn from '@effects/SlideIn.astro';
             </h3>
             <p class="text-sm">Indiana University Alumnus,<br />McKinney School of Law,<br />J.D. Candidate</p>
           </div>
-          <div class="mx-auto flex max-w-xs flex-col items-center gap-4 text-center">
-            <div class="rounded-full bg-gradient-to-br from-yellow-400 to-pink-400 p-3">
+          <div class="isolate mx-auto flex max-w-xs flex-col items-center gap-4 text-center">
+            <div class="relative -z-10">
+              <div
+                class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-yellow-400 to-pink-400 p-2"
+              >
+              </div>
               <img class="rounded-full border-8 border-zinc-950" src="kai-gonzalez.webp" alt="" />
             </div>
             <h3 class="-mt-12 w-full bg-zinc-950 pt-4 md:-mt-20 md:text-xl">
@@ -182,8 +206,12 @@ import SlideIn from '@effects/SlideIn.astro';
             </h3>
             <p class="text-sm">Indiana University Alumnus,<br />Kelley School of Business,<br />Pre-Law</p>
           </div>
-          <div class="mx-auto flex max-w-xs flex-col items-center gap-4 text-center">
-            <div class="rounded-full bg-gradient-to-br from-yellow-400 to-pink-400 p-3">
+          <div class="isolate mx-auto flex max-w-xs flex-col items-center gap-4 text-center">
+            <div class="relative -z-10">
+              <div
+                class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-yellow-400 to-pink-400 p-2"
+              >
+              </div>
               <img class="rounded-full border-8 border-zinc-950" src="alex-belyayev.webp" alt="" />
             </div>
             <h3 class="-mt-12 w-full bg-zinc-950 pt-4 md:-mt-20 md:text-xl">
@@ -192,8 +220,12 @@ import SlideIn from '@effects/SlideIn.astro';
             </h3>
             <p class="text-sm">Indiana University Alumnus</p>
           </div>
-          <div class="mx-auto flex max-w-xs flex-col items-center gap-4 text-center">
-            <div class="rounded-full bg-gradient-to-br from-yellow-400 to-pink-400 p-3">
+          <div class="isolate mx-auto flex max-w-xs flex-col items-center gap-4 text-center">
+            <div class="relative -z-10">
+              <div
+                class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-yellow-400 to-pink-400 p-2"
+              >
+              </div>
               <img class="rounded-full border-8 border-zinc-950" src="ethan-gonzalez.webp" alt="" />
             </div>
             <h3 class="-mt-12 w-full bg-zinc-950 pt-4 md:-mt-20 md:text-xl">

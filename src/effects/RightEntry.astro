@@ -1,0 +1,27 @@
+---
+const { delay = 0 } = Astro.props;
+---
+
+<div
+  x-data="{ v: false }"
+  x-cloak
+  x-intersect.once="v = true"
+  class="start"
+  :class="{ 'end': v }"
+  style={`transition-delay: ${delay}`}
+>
+  <slot />
+</div>
+
+<style>
+  .start {
+    transition: 1000ms;
+    opacity: 0%;
+    transform: translateX(20rem);
+  }
+
+  .end {
+    opacity: 100%;
+    transform: translateX(0);
+  }
+</style>

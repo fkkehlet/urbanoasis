@@ -8,6 +8,9 @@ module.exports = {
       fontFamily: {
         sans: ['modelica', ...defaultTheme.fontFamily.sans],
       },
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
+      },
     },
   },
   plugins: [],
