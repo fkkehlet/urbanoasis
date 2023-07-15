@@ -11,9 +11,10 @@
         document.querySelector('svg')
         document.querySelectorAll('path').forEach(path => {
             path.style.transition = `${duration/1000/10}s`;
+            path.classList.remove('fill-zinc-50');
             path.classList.add('fill-pink-100');
         });
-    }, duration * 0.45));
+    }, duration * 0.35));
 </script>
 
 
