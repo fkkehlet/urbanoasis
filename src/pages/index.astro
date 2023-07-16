@@ -1,23 +1,34 @@
 ---
+import { Image, getImage } from 'astro:assets';
 import Layout from '@layouts/Layout.astro';
+
 import Credits from '@components/Credits.astro';
 import Tree from '@components/Tree.svelte';
-import TopEntry from '@effects/TopEntry.astro';
-import LeftEntry from '@effects/LeftEntry.astro';
-import RightEntry from '@effects/RightEntry.astro';
+
+import EnterTop from '@effects/EnterTop.astro';
+import EnterLeft from '@effects/EnterLeft.astro';
+import EnterRight from '@effects/EnterRight.astro';
+
+import hero from '@assets/hero.jpg';
+import alex from '@assets/alex.png';
+import ethan from '@assets/ethan.png';
+import grant from '@assets/grant.png';
+import kai from '@assets/kai.png';
+
+const optimizedHero = await getImage({ src: hero, format: 'jpg' });
 ---
 
 <Layout title="Urban Oasis \\\\ Let's cultivate community">
   <main class="overflow-x-clip">
     <header class="fixed top-0 z-50 w-full px-5">
-      <TopEntry>
+      <EnterTop>
         <div class="container mx-auto opacity-100">
-          <a href="#"><img src="urbanoasis-tall.png" alt="" class="h-28" /></a>
+          <a href="#"><img src="logo-banner.png" alt="" class="h-28" /></a>
         </div>
-      </TopEntry>
+      </EnterTop>
     </header>
     <div
-      class="bg-[linear-gradient(270deg,#1a2e0588,#09090bee),url('/hero.jpg')] bg-cover bg-center pb-24 pt-64 lg:pt-80"
+      class={`bg-[linear-gradient(270deg,#1a2e0588,#09090bee),url('${optimizedHero.src}')] bg-cover bg-center pb-24 pt-64 lg:pt-80`}
     >
       <header class="fixed top-0 z-40 w-full bg-clip-text backdrop-blur-lg">
         <div class="flex items-center bg-zinc-950 opacity-60">
@@ -27,15 +38,15 @@ import RightEntry from '@effects/RightEntry.astro';
       <div class="px-5">
         <div class="container mx-auto">
           <h1 class="text-xl font-bold text-lime-100 md:text-3xl">
-            <LeftEntry class="delay-[1000ms]">Let's<br /></LeftEntry>
-            <RightEntry class="delay-[2000ms]">cultivate<br /></RightEntry>
-            <LeftEntry class="delay-[3000ms]">
+            <EnterLeft delay="">Let's<br /></EnterLeft>
+            <EnterRight class="delay-[2000ms]">cultivate<br /></EnterRight>
+            <EnterLeft class="delay-[3000ms]">
               <span
                 class="bg-gradient-to-r from-lime-400 to-lime-200 bg-clip-text text-5xl text-transparent md:text-7xl"
               >
                 \\community
               </span>
-            </LeftEntry>
+            </EnterLeft>
           </h1>
         </div>
       </div>
@@ -62,7 +73,7 @@ import RightEntry from '@effects/RightEntry.astro';
           </p>
         </div>
         <div class="relative space-y-24 px-5 pb-16 pt-8 md:flex md:flex-col md:space-y-16">
-          <LeftEntry>
+          <EnterLeft>
             <div
               class="max-w-md -rotate-6 space-y-5 border-2 border-zinc-950 bg-zinc-50/90 p-5 shadow-md shadow-zinc-300 max-md:mx-auto md:self-start"
             >
@@ -73,9 +84,9 @@ import RightEntry from '@effects/RightEntry.astro';
                 year-round.
               </p>
             </div>
-          </LeftEntry>
+          </EnterLeft>
           <div class="max-w-md max-md:mx-auto md:self-end">
-            <RightEntry>
+            <EnterRight>
               <div class="rotate-6 space-y-5 border-2 border-zinc-950 bg-zinc-50/90 p-5 shadow-md shadow-zinc-300">
                 <h3 class="text-3xl font-bold">Forging<br />bonds.</h3>
                 <p class="text-justify">
@@ -84,9 +95,9 @@ import RightEntry from '@effects/RightEntry.astro';
                   traditions.
                 </p>
               </div>
-            </RightEntry>
+            </EnterRight>
           </div>
-          <LeftEntry>
+          <EnterLeft>
             <div
               class="max-w-md -rotate-6 space-y-5 border-2 border-zinc-950 bg-zinc-50/90 p-5 shadow-md shadow-zinc-300 max-md:mx-auto md:self-start"
             >
@@ -97,7 +108,7 @@ import RightEntry from '@effects/RightEntry.astro';
                 diet.
               </p>
             </div>
-          </LeftEntry>
+          </EnterLeft>
           <div class="">
             <Tree client:visible />
           </div>
@@ -115,9 +126,6 @@ import RightEntry from '@effects/RightEntry.astro';
     <div id="volunteer" class="-mt-16 bg-zinc-50">
       <div class="h-16 w-full bg-zinc-950"></div>
       <div class="container mx-auto px-5 py-24">
-        <!--<div class="max-w-md bg-gradient-to-br from-zinc-700 to-zinc-950 p-3">
-          <img src="gardening.jpg" alt="" class="opacity-60" />
-</div>-->
         <div class="space-y-8 text-xl">
           <div class="mx-auto max-w-prose space-y-20 text-center text-xl">
             <p>
@@ -183,7 +191,7 @@ import RightEntry from '@effects/RightEntry.astro';
                 class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-zinc-400 to-zinc-950 p-2"
               >
               </div>
-              <img class="rounded-full grayscale" src="grant.png" alt="" />
+              <Image class="rounded-full grayscale" src={grant} format="jpg" alt="" />
             </div>
             <h3 class="-mt-12 w-full bg-zinc-950 pt-4 md:-mt-20 md:text-xl">
               <strong>CHAIRMAN</strong><br />
@@ -197,7 +205,7 @@ import RightEntry from '@effects/RightEntry.astro';
                 class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-zinc-400 to-zinc-950 p-2"
               >
               </div>
-              <img class="rounded-full grayscale" src="kai.png" alt="" />
+              <Image class="rounded-full grayscale" src={kai} format="jpg" alt="" />
             </div>
             <h3 class="-mt-12 w-full bg-zinc-950 pt-4 md:-mt-20 md:text-xl">
               <strong>PRESIDENT</strong><br />
@@ -211,7 +219,7 @@ import RightEntry from '@effects/RightEntry.astro';
                 class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-zinc-400 to-zinc-950 p-2"
               >
               </div>
-              <img class="rounded-full grayscale" src="alex.png" alt="" />
+              <Image class="rounded-full grayscale" src={alex} format="jpg" alt="" />
             </div>
             <h3 class="-mt-12 w-full bg-zinc-950 pt-4 md:-mt-20 md:text-xl">
               <strong>OPERATIONS DIRECTOR</strong><br />
@@ -225,7 +233,7 @@ import RightEntry from '@effects/RightEntry.astro';
                 class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-zinc-400 to-zinc-950 p-2"
               >
               </div>
-              <img class="rounded-full grayscale" src="ethan.png" alt="" />
+              <Image class="rounded-full grayscale" src={ethan} format="jpg" alt="" />
             </div>
             <h3 class="-mt-12 w-full bg-zinc-950 pt-4 md:-mt-20 md:text-xl">
               <strong>FINANCE DIRECTOR</strong><br />
