@@ -1,4 +1,7 @@
 ---
+import '@styles/global.css';
+import '@scripts/global.';
+
 export interface Props {
   title: string;
 }
@@ -15,50 +18,13 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
-    <!-- Load Alpine.js -->
+    <!-- Initialize Alpine.js -->
     <script>
       import Alpine from 'alpinejs';
       import intersect from '@alpinejs/intersect';
-      window.Alpine = Alpine;
       Alpine.plugin(intersect);
       Alpine.start();
     </script>
-
-    <!-- Make the x-cloak directive work in Alpine.js -->
-    <style is:global>
-      [x-cloak] {
-        display: none !important;
-      }
-
-      @font-face {
-        font-family: 'modelica';
-        src: url('./fonts/BwModelica-Regular.woff') format('woff');
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-      }
-      @font-face {
-        font-family: 'modelica';
-        src: url('./fonts/BwModelica-RegularItalic.woff') format('woff');
-        font-weight: 400;
-        font-style: italic;
-        font-display: swap;
-      }
-      @font-face {
-        font-family: 'modelica';
-        src: url('./fonts/BwModelica-ExtraBold.woff') format('woff');
-        font-weight: 700;
-        font-style: normal;
-        font-display: swap;
-      }
-      @font-face {
-        font-family: 'modelica';
-        src: url('./fonts/BwModelica-ExtraBoldItalic.woff') format('woff');
-        font-weight: 700;
-        font-style: italic;
-        font-display: swap;
-      }
-    </style>
   </head>
   <body class="bg-zinc-950 text-zinc-950">
     <slot />
