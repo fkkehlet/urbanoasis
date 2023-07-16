@@ -5,6 +5,7 @@ import Layout from '@layouts/Layout.astro';
 import Credits from '@components/Credits.astro';
 import Person from '@components/Person.astro';
 import Tree from '@components/Tree.astro';
+import Underline from '@components/Underline.astro';
 
 import EnterTop from '@effects/EnterTop.astro';
 import EnterLeft from '@effects/EnterLeft.astro';
@@ -68,7 +69,7 @@ import kai from '@assets/kai.png';
       <div class="container isolate mx-auto gap-8 space-y-24 pt-24">
         <div class="mx-auto max-w-prose space-y-7 px-5 text-center text-xl">
           <h2 class="text-5xl font-bold">
-            A <span class="underline decoration-pink-400 decoration-4">brighter</span> future.
+            A <Underline>brighter</Underline> future.
           </h2>
           <p>
             Gardening holds immense potential in addressing the pressing issue of food insecurity while simultaneously
@@ -134,11 +135,8 @@ import kai from '@assets/kai.png';
               To turn our vision into reality, we extend an invitation for you to join us on this transformative
               journey. Whether you have prior gardening experience or not, we'd love for you to join us in our mission.
             </p>
-            <p class="text-center text-3xl">
-              <strong>
-                Let's cultivate <span class="underline decoration-pink-400 decoration-4">community</span> in Indianapolis,
-                together.
-              </strong>
+            <p class="text-3xl">
+              <strong>Let's cultivate <Underline>community</Underline> in Indianapolis, together.</strong>
             </p>
           </div>
           <form class="mx-auto max-w-prose space-y-14 p-1" action="">

@@ -1,0 +1,19 @@
+---
+---
+
+<span class="relative isolate"
+  ><slot /><span
+    x-data
+    x-intersect.once.margin.-30%.200%="$el.classList.add('end')"
+    class="start absolute bottom-0 left-0 -z-10 block h-2 bg-gradient-to-r from-yellow-400 to-pink-400"></span></span
+>
+
+<style>
+  .start {
+    transition: width 1000ms;
+    width: 0%;
+  }
+  .end {
+    width: 100%;
+  }
+</style>
