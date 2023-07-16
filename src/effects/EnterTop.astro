@@ -4,7 +4,7 @@ const { class: className } = Astro.props;
 
 <div
   x-data
-  x-intersect.once="$el.classList.add('end')"
+  x-intersect.once.margin.200%.0="$el.classList.add('end')"
   class={`start transition duration-1000 motion-reduce:transition-none ${className}`}
 >
   <slot />
@@ -13,7 +13,7 @@ const { class: className } = Astro.props;
 <style>
   .start {
     opacity: 0%;
-    transform: translateY(-100%);
+    transform: translatey(-100%);
   }
   .end {
     opacity: 100%;

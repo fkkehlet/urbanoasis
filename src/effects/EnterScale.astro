@@ -1,0 +1,18 @@
+---
+const { parent = false, class: className, intersect = 'half' } = Astro.props;
+---
+
+<div class={`start transition duration-1000 motion-reduce:transition-none ${className}`} :class="{ 'end': v }">
+  <slot />
+</div>
+
+<style>
+  .start {
+    opacity: 0;
+    transform: scale(0);
+  }
+  .end {
+    opacity: 1;
+    transform: scale(1);
+  }
+</style>

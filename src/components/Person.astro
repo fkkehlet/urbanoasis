@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets';
+import EnterScale from '@effects/EnterScale.astro';
+
+const { role, name, credentials, imgSrc } = Astro.props;
+---
+
+<div
+  x-data="{ v: false }"
+  x-intersect.full.once="v = true"
+  class="isolate mx-auto flex max-w-xs flex-col items-center gap-4 text-center"
+>
+  <div class="-z-10">
+    <EnterScale>
+      <div class="relative">
+        <div
+          class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-zinc-400 to-zinc-950 p-2"
+        >
+        </div>
+        <EnterScale class="delay-[200ms]">
+          <Image class="rounded-full grayscale" src={imgSrc} format="jpg" alt="" />
+        </EnterScale>
+      </div>
+    </EnterScale>
+  </div>
+  <h3 class="-mt-12 w-full bg-zinc-950 pt-4 md:-mt-20 md:text-xl">
+    <EnterScale class="delay-[300ms]">
+      <strong>{role.toUpperCase()}</strong><br />
+    </EnterScale>
+    <EnterScale class="delay-[400ms]">
+      {name}
+    </EnterScale>
+  </h3>
+  <EnterScale class="delay-[500ms]">
+    <p class="w-64 text-sm">{credentials}</p>
+  </EnterScale>
+</div>

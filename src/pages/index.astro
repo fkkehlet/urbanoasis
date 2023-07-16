@@ -3,11 +3,13 @@ import { Image, getImage } from 'astro:assets';
 import Layout from '@layouts/Layout.astro';
 
 import Credits from '@components/Credits.astro';
-import Tree from '@components/Tree.svelte';
+import Person from '@components/Person.astro';
+import Tree from '@components/Tree.astro';
 
 import EnterTop from '@effects/EnterTop.astro';
 import EnterLeft from '@effects/EnterLeft.astro';
 import EnterRight from '@effects/EnterRight.astro';
+import EnterJiggle from '@effects/EnterJiggle.astro';
 
 // import hero from '@assets/hero.jpg';
 import alex from '@assets/alex.png';
@@ -20,27 +22,29 @@ import kai from '@assets/kai.png';
 
 <Layout title="Urban Oasis \\\\ Let's cultivate community">
   <main class="overflow-x-clip">
-    <header class="fixed top-0 z-50 w-full px-5">
-      <EnterTop>
-        <div class="container mx-auto opacity-100">
-          <a href="#"><img src="logo-banner.png" alt="" class="h-28" /></a>
+    <header>
+      <div class="fixed top-0 z-40 w-full">
+        <div class="backdrop-blur-lg">
+          <div class="flex h-16 items-center bg-zinc-950 px-5 opacity-60"></div>
         </div>
-      </EnterTop>
+      </div>
+      <div class="fixed top-0 z-50 w-full">
+        <div class="container mx-auto opacity-100">
+          <EnterTop>
+            <a href="#"><img src="logo-banner.png" alt="" class="h-28" /></a>
+          </EnterTop>
+        </div>
+      </div>
     </header>
     <div
-      class="bg-[linear-gradient(270deg,#1a2e0588,#09090bee),url('hero.jpg')] bg-cover bg-center pb-24 pt-64 lg:pt-80"
+      class="bg-[linear-gradient(0deg,#1a2e0588,#09090b),url('hero.jpg')] bg-cover bg-center pb-24 pt-64 backdrop-blur lg:pt-80"
     >
-      <header class="fixed top-0 z-40 w-full bg-clip-text backdrop-blur-lg">
-        <div class="flex items-center bg-zinc-950 opacity-60">
-          <div class="h-16"></div>
-        </div>
-      </header>
       <div class="px-5">
         <div class="container mx-auto">
           <h1 class="text-xl font-bold text-lime-100 md:text-3xl">
-            <EnterLeft delay="">Let's<br /></EnterLeft>
-            <EnterRight class="delay-[2000ms]">cultivate<br /></EnterRight>
-            <EnterLeft class="delay-[3000ms]">
+            <EnterLeft>Let's<br /></EnterLeft>
+            <EnterRight>cultivate<br /></EnterRight>
+            <EnterLeft>
               <span
                 class="bg-gradient-to-r from-lime-400 to-lime-200 bg-clip-text text-5xl text-transparent md:text-7xl"
               >
@@ -72,10 +76,10 @@ import kai from '@assets/kai.png';
             sustainable and flourishing gardens become a reality, starting in the Indianapolis area.
           </p>
         </div>
-        <div class="relative space-y-24 px-5 pb-16 pt-8 md:flex md:flex-col md:space-y-16">
+        <div class="relative space-y-24 px-5 pb-16 pt-8 md:space-y-16">
           <EnterLeft>
             <div
-              class="max-w-md -rotate-6 space-y-5 border-2 border-zinc-950 bg-zinc-50/90 p-5 shadow-md shadow-zinc-300 max-md:mx-auto md:self-start"
+              class="max-w-md -rotate-6 space-y-5 border-2 border-zinc-950 bg-zinc-50/90 p-5 shadow-md shadow-zinc-300 max-md:mx-auto"
             >
               <h3 class="text-3xl font-bold">Empowering<br />independence.</h3>
               <p class="text-justify">
@@ -85,21 +89,21 @@ import kai from '@assets/kai.png';
               </p>
             </div>
           </EnterLeft>
-          <div class="max-w-md max-md:mx-auto md:self-end">
-            <EnterRight>
-              <div class="rotate-6 space-y-5 border-2 border-zinc-950 bg-zinc-50/90 p-5 shadow-md shadow-zinc-300">
-                <h3 class="text-3xl font-bold">Forging<br />bonds.</h3>
-                <p class="text-justify">
-                  Working together in shared garden spaces forges tight-knit relationships and fosters a sense of unity
-                  and togetherness, promoting a supportive network where individuals can exchange ideas, recipes, and
-                  traditions.
-                </p>
-              </div>
-            </EnterRight>
-          </div>
+          <EnterRight>
+            <div
+              class="max-w-md rotate-6 space-y-5 border-2 border-zinc-950 bg-zinc-50/90 p-5 shadow-md shadow-zinc-300 max-md:mx-auto md:ml-auto"
+            >
+              <h3 class="text-3xl font-bold">Forging<br />bonds.</h3>
+              <p class="text-justify">
+                Working together in shared garden spaces forges tight-knit relationships and fosters a sense of unity
+                and togetherness, promoting a supportive network where individuals can exchange ideas, recipes, and
+                traditions.
+              </p>
+            </div>
+          </EnterRight>
           <EnterLeft>
             <div
-              class="max-w-md -rotate-6 space-y-5 border-2 border-zinc-950 bg-zinc-50/90 p-5 shadow-md shadow-zinc-300 max-md:mx-auto md:self-start"
+              class="max-w-md -rotate-6 space-y-5 border-2 border-zinc-950 bg-zinc-50/90 p-5 shadow-md shadow-zinc-300 max-md:mx-auto"
             >
               <h3 class="text-3xl font-bold">Inspiring<br />health.</h3>
               <p class="text-justify">
@@ -109,7 +113,7 @@ import kai from '@assets/kai.png';
               </p>
             </div>
           </EnterLeft>
-          <!-- <Tree /> -->
+          <Tree />
         </div>
       </div>
     </div>
@@ -160,12 +164,14 @@ import kai from '@assets/kai.png';
                 />
               </div>
             </div>
-            <button
-              class="w-full -rotate-2 bg-gradient-to-br from-yellow-400 to-pink-400 p-5 opacity-80 transition hover:rotate-2 hover:from-yellow-400 hover:to-pink-400 hover:opacity-100 focus:rotate-2 focus:from-yellow-400 focus:to-pink-400 focus:opacity-100"
-              type="submit"
-            >
-              <strong class="text-2xl">Volunteer with us!</strong>
-            </button>
+            <EnterJiggle>
+              <button
+                class="w-full -rotate-2 bg-gradient-to-br from-yellow-400 to-pink-400 p-5 opacity-80 transition hover:rotate-2 hover:from-yellow-400 hover:to-pink-400 hover:opacity-100 focus:rotate-2 focus:from-yellow-400 focus:to-pink-400 focus:opacity-100"
+                type="submit"
+              >
+                <strong class="text-2xl">Volunteer with us!</strong>
+              </button>
+            </EnterJiggle>
           </form>
         </div>
       </div>
@@ -183,62 +189,30 @@ import kai from '@assets/kai.png';
       <div class="h-16 w-full bg-lime-200"></div>
       <div class="container mx-auto flex flex-col space-y-32 px-5 py-16">
         <div class="grid max-w-4xl grid-cols-1 gap-x-16 gap-y-12 self-center sm:grid-cols-2 lg:gap-x-32 lg:gap-y-16">
-          <div class="isolate mx-auto flex max-w-xs flex-col items-center gap-4 text-center">
-            <div class="relative -z-10">
-              <div
-                class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-zinc-400 to-zinc-950 p-2"
-              >
-              </div>
-              <Image class="rounded-full grayscale" src={grant} format="jpg" alt="" />
-            </div>
-            <h3 class="-mt-12 w-full bg-zinc-950 pt-4 md:-mt-20 md:text-xl">
-              <strong>CHAIRMAN</strong><br />
-              Grant Racop
-            </h3>
-            <p class="text-sm">Indiana University Alumnus,<br />McKinney School of Law,<br />J.D. Candidate</p>
-          </div>
-          <div class="isolate mx-auto flex max-w-xs flex-col items-center gap-4 text-center">
-            <div class="relative -z-10">
-              <div
-                class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-zinc-400 to-zinc-950 p-2"
-              >
-              </div>
-              <Image class="rounded-full grayscale" src={kai} format="jpg" alt="" />
-            </div>
-            <h3 class="-mt-12 w-full bg-zinc-950 pt-4 md:-mt-20 md:text-xl">
-              <strong>PRESIDENT</strong><br />
-              Kai Gonzalez
-            </h3>
-            <p class="text-sm">Indiana University Alumnus,<br />Kelley School of Business,<br />Pre-Law</p>
-          </div>
-          <div class="isolate mx-auto flex max-w-xs flex-col items-center gap-4 text-center">
-            <div class="relative -z-10">
-              <div
-                class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-zinc-400 to-zinc-950 p-2"
-              >
-              </div>
-              <Image class="rounded-full grayscale" src={alex} format="jpg" alt="" />
-            </div>
-            <h3 class="-mt-12 w-full bg-zinc-950 pt-4 md:-mt-20 md:text-xl">
-              <strong>OPERATIONS DIRECTOR</strong><br />
-              Alex Belyayev
-            </h3>
-            <p class="text-sm">Indiana University Alumnus</p>
-          </div>
-          <div class="isolate mx-auto flex max-w-xs flex-col items-center gap-4 text-center">
-            <div class="relative -z-10">
-              <div
-                class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-zinc-400 to-zinc-950 p-2"
-              >
-              </div>
-              <Image class="rounded-full grayscale" src={ethan} format="jpg" alt="" />
-            </div>
-            <h3 class="-mt-12 w-full bg-zinc-950 pt-4 md:-mt-20 md:text-xl">
-              <strong>FINANCE DIRECTOR</strong><br />
-              Ethan Gonzalez
-            </h3>
-            <p class="text-sm">Indiana University Alumnus,<br />Kelley School of Business</p>
-          </div>
+          <Person
+            name="Grant Racop"
+            role="Chairman"
+            imgSrc={grant}
+            credentials="Indiana University Alumnus, McKinney School of Law, J.D. Candidate"
+          />
+          <Person
+            name="Kai Gonzalez"
+            role="President"
+            imgSrc={kai}
+            credentials="Indiana University Alumnus, Kelley School of Business, Pre-Law"
+          />
+          <Person
+            name="Alex Belyayev"
+            role="Operations Director"
+            imgSrc={alex}
+            credentials="Indiana University Alumnus"
+          />
+          <Person
+            name="Ethan Gonzalez"
+            role="Finance Director"
+            imgSrc={ethan}
+            credentials="Indiana University Alumnus, Kelley School of Business"
+          />
         </div>
         <div class="mx-auto w-fit space-y-5 text-center">
           <p><i>&copy; 2023 Urban Oasis, Inc.</i></p>
