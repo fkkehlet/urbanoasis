@@ -9,13 +9,13 @@ import EnterTop from '@effects/EnterTop.astro';
 import EnterLeft from '@effects/EnterLeft.astro';
 import EnterRight from '@effects/EnterRight.astro';
 
-import hero from '@assets/hero.jpg';
+// import hero from '@assets/hero.jpg';
 import alex from '@assets/alex.png';
 import ethan from '@assets/ethan.png';
 import grant from '@assets/grant.png';
 import kai from '@assets/kai.png';
 
-const optimizedHero = await getImage({ src: hero, format: 'jpg' });
+// const optimizedHero = await getImage({ src: hero, format: 'jpg' });
 ---
 
 <Layout title="Urban Oasis \\\\ Let's cultivate community">
@@ -28,7 +28,7 @@ const optimizedHero = await getImage({ src: hero, format: 'jpg' });
       </EnterTop>
     </header>
     <div
-      class={`bg-[linear-gradient(270deg,#1a2e0588,#09090bee),url('${optimizedHero.src}')] bg-cover bg-center pb-24 pt-64 lg:pt-80`}
+      class="bg-[linear-gradient(270deg,#1a2e0588,#09090bee),url('hero.jpg')] bg-cover bg-center pb-24 pt-64 lg:pt-80"
     >
       <header class="fixed top-0 z-40 w-full bg-clip-text backdrop-blur-lg">
         <div class="flex items-center bg-zinc-950 opacity-60">
