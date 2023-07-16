@@ -4,8 +4,8 @@ const { class: className } = Astro.props;
 
 <div
   x-data
-  class={`start transition duration-1000 motion-reduce:transition-none ${className}`}
   x-intersect.once="$el.classList.add('end')"
+  class={`start transition duration-1000 motion-reduce:transition-none ${className}`}
 >
   <slot />
 </div>
