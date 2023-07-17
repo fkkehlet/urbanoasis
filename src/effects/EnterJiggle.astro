@@ -1,10 +1,19 @@
-<div x-data x-intersect.once.margin.-30%.0="$el.classList.add('jiggle')" class="motion-reduce:animate-none">
+---
+const { class: className = '' } = Astro.props;
+---
+
+<div class={`init ${className}`} :class="{ 'trig': view }">
   <slot />
 </div>
 
 <style>
-  .jiggle {
+  .trig {
     animation: 1000ms jiggle;
+  }
+  @media (prefers-reduced-motion) {
+    .trig {
+      animation: none;
+    }
   }
   @keyframes jiggle {
     0% {

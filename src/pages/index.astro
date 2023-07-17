@@ -7,6 +7,7 @@ import Person from '@components/Person.astro';
 import Tree from '@components/Tree.astro';
 import Underline from '@components/Underline.astro';
 
+import Enter from '@effects/Enter.astro';
 import EnterTop from '@effects/EnterTop.astro';
 import EnterLeft from '@effects/EnterLeft.astro';
 import EnterRight from '@effects/EnterRight.astro';
@@ -161,14 +162,16 @@ import kai from '@assets/kai.png';
                 />
               </div>
             </div>
-            <EnterJiggle>
-              <button
-                class="w-full -rotate-2 bg-gradient-to-br from-yellow-400 to-pink-400 p-5 opacity-80 transition hover:rotate-2 hover:from-yellow-400 hover:to-pink-400 hover:opacity-100 focus:rotate-2 focus:from-yellow-400 focus:to-pink-400 focus:opacity-100"
-                type="submit"
-              >
-                <strong class="text-2xl">Volunteer with us!</strong>
-              </button>
-            </EnterJiggle>
+            <Enter>
+              <EnterJiggle>
+                <button
+                  class="w-full -rotate-2 bg-gradient-to-br from-yellow-400 to-pink-400 p-5 opacity-80 transition hover:rotate-2 hover:from-yellow-400 hover:to-pink-400 hover:opacity-100 focus:rotate-2 focus:from-yellow-400 focus:to-pink-400 focus:opacity-100"
+                  type="submit"
+                >
+                  <strong class="text-2xl">Volunteer with us!</strong>
+                </button>
+              </EnterJiggle>
+            </Enter>
           </form>
         </div>
       </div>

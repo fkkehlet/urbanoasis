@@ -1,26 +1,18 @@
 ---
-export interface Props {
-  child?: boolean,
-  class?: string,
-}
-const { child = false, class: className = '' } = Astro.props;
-
-
-const cl = `transition duration-1000 motion-reduce:transition-none ${className} init`;
+const { class: className = '' } = Astro.props;
 ---
 
-{
-child ? <div class:list={cl} :class="{ 'trig': view }"><slot /></div>
-      : <div class:list={cl} x-data x-intersect.once.margin.-30%.0="$el.classList.replace('init', 'trig')"><slot /></div>
-}
+<div class={`init transition duration-1000 motion-reduce:transition-none ${className}`} :class="{ 'trig': view }">
+  <slot />
+</div>
 
 <style>
-.init {
-  opacity: 0;
-  transform: scale(0);
-}
-.trig {
-  opacity: 1;
-  transform: scale(1);
-}
+  .init {
+    opacity: 0;
+    transform: scale(0);
+  }
+  .trig {
+    opacity: 1;
+    transform: scale(1);
+  }
 </style>

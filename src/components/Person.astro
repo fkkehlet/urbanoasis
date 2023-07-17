@@ -1,36 +1,36 @@
 ---
 import { Image } from 'astro:assets';
-import EnterParent from '@effects/EnterParent.astro';
+import Enter from '@effects/Enter.astro';
 import EnterScale from '@effects/EnterScale.astro';
 
 const { role, name, credentials, imgSrc } = Astro.props;
 ---
 
-<EnterParent>
+<Enter>
   <div class="isolate mx-auto flex max-w-xs flex-col items-center gap-4 text-center">
     <div class="-z-10">
-      <EnterScale child>
+      <EnterScale>
         <div class="relative">
           <div
             class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-zinc-400 to-zinc-950 p-2"
           >
           </div>
-          <EnterScale child class="delay-[200ms]">
+          <EnterScale class="delay-200">
             <Image class="rounded-full grayscale" src={imgSrc} format="jpg" alt="" />
           </EnterScale>
         </div>
       </EnterScale>
     </div>
     <h3 class="-mt-12 w-full bg-zinc-950 pt-4 md:-mt-20 md:text-xl">
-      <EnterScale child class="delay-[300ms]">
+      <EnterScale class="delay-400">
         <strong>{role.toUpperCase()}</strong><br />
       </EnterScale>
-      <EnterScale child class="delay-[400ms]">
+      <EnterScale class="delay-500">
         {name}
       </EnterScale>
     </h3>
-    <EnterScale child class="delay-[500ms]">
+    <EnterScale class="delay-600">
       <p class="w-64 text-sm">{credentials}</p>
     </EnterScale>
   </div>
-</EnterParent>
+</Enter>
