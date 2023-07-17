@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "@alpinejs/intersect": "^3.12.3",
-    "@animxyz/core": "^0.6.6",
     "@astrojs/svelte": "^3.1.0",
     "@astrojs/tailwind": "^4.0.0",
     "alpinejs": "^3.12.3",
