@@ -1,22 +1,18 @@
 ---
-const { class: className } = Astro.props;
+const { class: className = '' } = Astro.props;
 ---
 
-<div
-  x-data
-  x-intersect.once.margin.-30%.0="$el.classList.add('end')"
-  class={`start transition duration-1000 motion-reduce:transition-none ${className}`}
->
+<div class={`init transition duration-1000 motion-reduce:transition-none ${className}`} :class="{ 'trig': view }">
   <slot />
 </div>
 
 <style>
-  .start {
-    opacity: 0%;
+  .init {
+    opacity: 0;
     transform: translateX(-50%);
   }
-  .end {
-    opacity: 100%;
+  .trig {
+    opacity: 1;
     transform: translateX(0);
   }
 </style>

@@ -32,3 +32,93 @@
 [x-cloak] {
   display: none !important;
 }
+
+/* Tailwind: Make duration and delay work for both transitions as well as animations! */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer utilities {
+  .animate { animation: 150ms; }
+
+  .duration-50   { animation-duration:  200ms; transition-duration:  200ms; }
+  .duration-100  { animation-duration:  200ms; transition-duration:  200ms; }
+  .duration-150  { animation-duration:  150ms; transition-duration:  150ms; }
+  .duration-200  { animation-duration:  200ms; transition-duration:  200ms; }
+  .duration-250  { animation-duration:  250ms; transition-duration:  250ms; }
+  .duration-300  { animation-duration:  300ms; transition-duration:  300ms; }
+  .duration-350  { animation-duration:  350ms; transition-duration:  350ms; }
+  .duration-400  { animation-duration:  400ms; transition-duration:  400ms; }
+  .duration-450  { animation-duration:  450ms; transition-duration:  450ms; }
+  .duration-500  { animation-duration:  500ms; transition-duration:  500ms; }
+  .duration-550  { animation-duration:  550ms; transition-duration:  550ms; }
+  .duration-600  { animation-duration:  600ms; transition-duration:  600ms; }
+  .duration-650  { animation-duration:  650ms; transition-duration:  650ms; }
+  .duration-700  { animation-duration:  700ms; transition-duration:  700ms; }
+  .duration-750  { animation-duration:  750ms; transition-duration:  750ms; }
+  .duration-800  { animation-duration:  800ms; transition-duration:  800ms; }
+  .duration-850  { animation-duration:  850ms; transition-duration:  850ms; }
+  .duration-900  { animation-duration:  900ms; transition-duration:  900ms; }
+  .duration-950  { animation-duration:  950ms; transition-duration:  950ms; }
+  .duration-1000 { animation-duration: 1000ms; transition-duration: 1000ms; }
+  .duration-1100 { animation-duration: 1100ms; transition-duration: 1100ms; }
+  .duration-1200 { animation-duration: 1200ms; transition-duration: 1200ms; }
+  .duration-1300 { animation-duration: 1300ms; transition-duration: 1300ms; }
+  .duration-1400 { animation-duration: 1400ms; transition-duration: 1400ms; }
+  .duration-1500 { animation-duration: 1500ms; transition-duration: 1500ms; }
+  .duration-1600 { animation-duration: 1600ms; transition-duration: 1600ms; }
+  .duration-1700 { animation-duration: 1700ms; transition-duration: 1700ms; }
+  .duration-1800 { animation-duration: 1800ms; transition-duration: 1800ms; }
+  .duration-1900 { animation-duration: 1900ms; transition-duration: 1900ms; }
+  .duration-2000 { animation-duration: 2000ms; transition-duration: 2000ms; }
+  .duration-2100 { animation-duration: 2100ms; transition-duration: 2100ms; }
+  .duration-2200 { animation-duration: 2200ms; transition-duration: 2200ms; }
+  .duration-2300 { animation-duration: 2300ms; transition-duration: 2300ms; }
+  .duration-2400 { animation-duration: 2400ms; transition-duration: 2400ms; }
+  .duration-2500 { animation-duration: 2500ms; transition-duration: 2500ms; }
+  .duration-2600 { animation-duration: 2600ms; transition-duration: 2600ms; }
+  .duration-2700 { animation-duration: 2700ms; transition-duration: 2700ms; }
+  .duration-2800 { animation-duration: 2800ms; transition-duration: 2800ms; }
+  .duration-2900 { animation-duration: 2900ms; transition-duration: 2900ms; }
+  .duration-3000 { animation-duration: 3000ms; transition-duration: 3000ms; }
+
+  .delay-50   { animation-delay:  200ms; transition-delay:  200ms; }
+  .delay-100  { animation-delay:  200ms; transition-delay:  200ms; }
+  .delay-150  { animation-delay:  150ms; transition-delay:  150ms; }
+  .delay-200  { animation-delay:  200ms; transition-delay:  200ms; }
+  .delay-250  { animation-delay:  250ms; transition-delay:  250ms; }
+  .delay-300  { animation-delay:  300ms; transition-delay:  300ms; }
+  .delay-350  { animation-delay:  350ms; transition-delay:  350ms; }
+  .delay-400  { animation-delay:  400ms; transition-delay:  400ms; }
+  .delay-450  { animation-delay:  450ms; transition-delay:  450ms; }
+  .delay-500  { animation-delay:  500ms; transition-delay:  500ms; }
+  .delay-550  { animation-delay:  550ms; transition-delay:  550ms; }
+  .delay-600  { animation-delay:  600ms; transition-delay:  600ms; }
+  .delay-650  { animation-delay:  650ms; transition-delay:  650ms; }
+  .delay-700  { animation-delay:  700ms; transition-delay:  700ms; }
+  .delay-750  { animation-delay:  750ms; transition-delay:  750ms; }
+  .delay-800  { animation-delay:  800ms; transition-delay:  800ms; }
+  .delay-850  { animation-delay:  850ms; transition-delay:  850ms; }
+  .delay-900  { animation-delay:  900ms; transition-delay:  900ms; }
+  .delay-950  { animation-delay:  950ms; transition-delay:  950ms; }
+  .delay-1000 { animation-delay: 1000ms; transition-delay: 1000ms; }
+  .delay-1100 { animation-delay: 1100ms; transition-delay: 1100ms; }
+  .delay-1200 { animation-delay: 1200ms; transition-delay: 1200ms; }
+  .delay-1300 { animation-delay: 1300ms; transition-delay: 1300ms; }
+  .delay-1400 { animation-delay: 1400ms; transition-delay: 1400ms; }
+  .delay-1500 { animation-delay: 1500ms; transition-delay: 1500ms; }
+  .delay-1600 { animation-delay: 1600ms; transition-delay: 1600ms; }
+  .delay-1700 { animation-delay: 1700ms; transition-delay: 1700ms; }
+  .delay-1800 { animation-delay: 1800ms; transition-delay: 1800ms; }
+  .delay-1900 { animation-delay: 1900ms; transition-delay: 1900ms; }
+  .delay-2000 { animation-delay: 2000ms; transition-delay: 2000ms; }
+  .delay-2100 { animation-delay: 2100ms; transition-delay: 2100ms; }
+  .delay-2200 { animation-delay: 2200ms; transition-delay: 2200ms; }
+  .delay-2300 { animation-delay: 2300ms; transition-delay: 2300ms; }
+  .delay-2400 { animation-delay: 2400ms; transition-delay: 2400ms; }
+  .delay-2500 { animation-delay: 2500ms; transition-delay: 2500ms; }
+  .delay-2600 { animation-delay: 2600ms; transition-delay: 2600ms; }
+  .delay-2700 { animation-delay: 2700ms; transition-delay: 2700ms; }
+  .delay-2800 { animation-delay: 2800ms; transition-delay: 2800ms; }
+  .delay-2900 { animation-delay: 2900ms; transition-delay: 2900ms; }
+  .delay-3000 { animation-delay: 3000ms; transition-delay: 3000ms; }
+}

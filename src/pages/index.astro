@@ -5,13 +5,13 @@ import Layout from '@layouts/Layout.astro';
 import Credits from '@components/Credits.astro';
 import Person from '@components/Person.astro';
 import Tree from '@components/Tree.astro';
-import Underline from '@components/Underline.astro';
 
 import Enter from '@effects/Enter.astro';
 import EnterTop from '@effects/EnterTop.astro';
 import EnterLeft from '@effects/EnterLeft.astro';
 import EnterRight from '@effects/EnterRight.astro';
 import EnterJiggle from '@effects/EnterJiggle.astro';
+import Underline from '@effects/Underline.astro';
 
 import alex from '@assets/alex.png';
 import ethan from '@assets/ethan.png';
@@ -43,15 +43,17 @@ import kai from '@assets/kai.png';
       <div class="px-5">
         <div class="container mx-auto">
           <h1 class="text-xl font-bold text-lime-100 md:text-3xl">
-            <EnterLeft>Let's<br /></EnterLeft>
-            <EnterRight>cultivate<br /></EnterRight>
-            <EnterLeft>
-              <span
-                class="bg-gradient-to-r from-lime-400 to-lime-200 bg-clip-text text-5xl text-transparent md:text-7xl"
-              >
-                \\community
-              </span>
-            </EnterLeft>
+            <Enter>
+              <EnterLeft>Let's<br /></EnterLeft>
+              <EnterRight>cultivate<br /></EnterRight>
+              <EnterLeft>
+                <span
+                  class="bg-gradient-to-r from-lime-400 to-lime-200 bg-clip-text text-5xl text-transparent md:text-7xl"
+                >
+                  \\community
+                </span>
+              </EnterLeft>
+            </Enter>
           </h1>
         </div>
       </div>
@@ -78,42 +80,48 @@ import kai from '@assets/kai.png';
           </p>
         </div>
         <div class="relative space-y-24 px-5 pb-32 pt-8 md:space-y-16">
-          <EnterLeft>
-            <div
-              class="max-w-md -rotate-6 space-y-5 border-2 border-zinc-950 bg-zinc-50/90 p-5 shadow-md shadow-zinc-300 max-md:mx-auto"
-            >
-              <h3 class="text-3xl font-bold">Empowering<br />independence.</h3>
-              <p class="text-justify">
-                The ability to grow a diverse range of fruits, vegetables, and herbs enables communities to become more
-                self-reliant, reduce dependence on external food sources, and ensure access to fresh, nutritious food
-                year-round.
-              </p>
-            </div>
-          </EnterLeft>
-          <EnterRight>
-            <div
-              class="max-w-md rotate-6 space-y-5 border-2 border-zinc-950 bg-zinc-50/90 p-5 shadow-md shadow-zinc-300 max-md:mx-auto md:ml-auto"
-            >
-              <h3 class="text-3xl font-bold">Forging<br />bonds.</h3>
-              <p class="text-justify">
-                Working together in shared garden spaces forges tight-knit relationships and fosters a sense of unity
-                and togetherness, promoting a supportive network where individuals can exchange ideas, recipes, and
-                traditions.
-              </p>
-            </div>
-          </EnterRight>
-          <EnterLeft>
-            <div
-              class="max-w-md -rotate-6 space-y-5 border-2 border-zinc-950 bg-zinc-50/90 p-5 shadow-md shadow-zinc-300 max-md:mx-auto"
-            >
-              <h3 class="text-3xl font-bold">Inspiring<br />health.</h3>
-              <p class="text-justify">
-                Not only does engaging in physical activity while gardening provide health benefits, firsthand access to
-                fresh produce rich in vitamins, minerals, and antioxidants encourages us to consume a more nutritious
-                diet.
-              </p>
-            </div>
-          </EnterLeft>
+          <Enter>
+            <EnterLeft>
+              <div
+                class="max-w-md -rotate-6 space-y-5 border-2 border-zinc-950 bg-zinc-50/90 p-5 shadow-md shadow-zinc-300 max-md:mx-auto"
+              >
+                <h3 class="text-3xl font-bold">Empowering<br />independence.</h3>
+                <p class="text-justify">
+                  The ability to grow a diverse range of fruits, vegetables, and herbs enables communities to become
+                  more self-reliant, reduce dependence on external food sources, and ensure access to fresh, nutritious
+                  food year-round.
+                </p>
+              </div>
+            </EnterLeft>
+          </Enter>
+          <Enter>
+            <EnterRight>
+              <div
+                class="max-w-md rotate-6 space-y-5 border-2 border-zinc-950 bg-zinc-50/90 p-5 shadow-md shadow-zinc-300 max-md:mx-auto md:ml-auto"
+              >
+                <h3 class="text-3xl font-bold">Forging<br />bonds.</h3>
+                <p class="text-justify">
+                  Working together in shared garden spaces forges tight-knit relationships and fosters a sense of unity
+                  and togetherness, promoting a supportive network where individuals can exchange ideas, recipes, and
+                  traditions.
+                </p>
+              </div>
+            </EnterRight>
+          </Enter>
+          <Enter>
+            <EnterLeft>
+              <div
+                class="max-w-md -rotate-6 space-y-5 border-2 border-zinc-950 bg-zinc-50/90 p-5 shadow-md shadow-zinc-300 max-md:mx-auto"
+              >
+                <h3 class="text-3xl font-bold">Inspiring<br />health.</h3>
+                <p class="text-justify">
+                  Not only does engaging in physical activity while gardening provide health benefits, firsthand access
+                  to fresh produce rich in vitamins, minerals, and antioxidants encourages us to consume a more
+                  nutritious diet.
+                </p>
+              </div>
+            </EnterLeft>
+          </Enter>
           <Tree />
         </div>
       </div>

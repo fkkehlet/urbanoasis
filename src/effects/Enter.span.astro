@@ -1,0 +1,7 @@
+---
+const { class: className = '' } = Astro.props;
+---
+
+<span class={className} x-data="{ view: false }" x-intersect.once.margin.-30%.0="view = true">
+  <slot />
+</span>

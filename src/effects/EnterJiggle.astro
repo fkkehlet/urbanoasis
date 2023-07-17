@@ -2,18 +2,13 @@
 const { class: className = '' } = Astro.props;
 ---
 
-<div class={`init ${className}`} :class="{ 'trig': view }">
+<div class={`animate duration-500 delay-200 motion-reduce:animate-none ${className}`} :class="{ 'trig': view }">
   <slot />
 </div>
 
 <style>
   .trig {
-    animation: 1000ms jiggle;
-  }
-  @media (prefers-reduced-motion) {
-    .trig {
-      animation: none;
-    }
+    animation-name: jiggle;
   }
   @keyframes jiggle {
     0% {

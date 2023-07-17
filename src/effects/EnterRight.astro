@@ -1,13 +1,18 @@
 ---
-export interface Props {
-  delay?: number;
-}
-
-const { delay = 0 } = Astro.props;
-
-const xyz = `fade right-50% duration-10 delay-${delay}`;
+const { class: className = '' } = Astro.props;
 ---
 
-<div x-data x-intersect.once.margin.-30%.0="$el.classList.replace('opacity-0', 'xyz-in')" class={`opacity-0`} xyz={xyz}>
+<div class={`init transition duration-1000 motion-reduce:transition-none ${className}`} :class="{ 'trig': view }">
   <slot />
 </div>
+
+<style>
+  .init {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+  .trig {
+    opacity: 1;
+    transform: translateX(0);
+  }
+</style>
