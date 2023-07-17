@@ -1,20 +1,11 @@
----
-const { class: className } = Astro.props;
----
-
-<div
-  x-data
-  x-intersect.once.margin.-30%.0="$el.classList.add('trigger')"
-  class={`motion-reduce:animate-none ${className}`}
->
+<div x-data x-intersect.once.margin.-30%.0="$el.classList.add('jiggle')" class="motion-reduce:animate-none">
   <slot />
 </div>
 
 <style>
-  .trigger {
+  .jiggle {
     animation: 1000ms jiggle;
   }
-
   @keyframes jiggle {
     0% {
       transform: rotate(0deg);

@@ -1,17 +1,25 @@
 ---
-const { parent = false, class: className, intersect = 'half' } = Astro.props;
+export interface Props {
+  child?: boolean,
+  class?: string,
+}
+const { child = false, class: className = '' } = Astro.props;
+
+
+const cl = `transition duration-1000 motion-reduce:transition-none ${className} init`;
 ---
 
-<div class={`start transition duration-1000 motion-reduce:transition-none ${className}`} :class="{ 'end': v }">
-  <slot />
-</div>
+{
+child ? <div class:list={cl} :class="{ 'trig': view }"><slot /></div>
+      : <div class:list={cl} x-data x-intersect.once.margin.-30%.0="$el.classList.add('trig')"><slot /></div>
+}
 
 <style>
-  .start {
+  .init {
     opacity: 0;
     transform: scale(0);
   }
-  .end {
+  .trig {
     opacity: 1;
     transform: scale(1);
   }
