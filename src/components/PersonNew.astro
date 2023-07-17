@@ -1,0 +1,35 @@
+---
+import { Image } from 'astro:assets';
+import Xyz from '@effects/Xyz.astro';
+
+const { role, name, credentials, imgSrc } = Astro.props;
+---
+
+<Xyz anim="fade duration-10 small stagger-2">
+  <div class="isolate mx-auto flex max-w-xs flex-col items-center gap-4 text-center">
+    <div class="-z-10">
+      <div class="xyz-nested">
+        <div class="relative">
+          <div
+            class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-zinc-400 to-zinc-950 p-2"
+          >
+          </div>
+          <div class="xyz-nested">
+            <Image class="rounded-full grayscale" src={imgSrc} format="jpg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3 class="-mt-12 w-full bg-zinc-950 pt-4 md:-mt-20 md:text-xl">
+      <div class="xyz-nested">
+        <strong>{role.toUpperCase()}</strong><br />
+      </div>
+      <div class="xyz-nested">
+        {name}
+      </div>
+    </h3>
+    <div class="xyz-nested">
+      <p class="w-64 text-sm">{credentials}</p>
+    </div>
+  </div>
+</Xyz>

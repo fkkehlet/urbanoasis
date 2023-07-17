@@ -1,12 +1,13 @@
 ---
-const { class: className } = Astro.props;
+export interface Props {
+  delay?: number;
+}
+
+const { delay = 0 } = Astro.props;
+
+const xyz = `fade right-50% duration-10 delay-${delay}`;
 ---
 
-<div
-  x-data
-  x-intersect.once.margin.-30%.0="$el.classList.replace('opacity-0', 'opacity-100'); $el.classList.add('xyz-in');"
-  class={`opacity-0 ${className}`}
-  xyz="fade right-50% duration-10"
->
+<div x-data x-intersect.once.margin.-30%.0="$el.classList.replace('opacity-0', 'xyz-in')" class={`opacity-0`} xyz={xyz}>
   <slot />
 </div>

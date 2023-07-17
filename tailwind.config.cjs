@@ -11,6 +11,13 @@ module.exports = {
       animation: {
         'spin-slow': 'spin 3s linear infinite',
       },
+      transitionDelay: {
+        400: '400ms',
+        600: '600ms',
+        800: '800ms',
+        900: '900ms',
+        2000: '2000ms',
+      },
     },
   },
   plugins: [],

@@ -1,0 +1,16 @@
+---
+export interface Props {
+  anim: string;
+}
+
+const { anim } = Astro.props;
+---
+
+<div
+  x-data="{ view: false }"
+  x-intersect.once.margin.-30%.0="view = true"
+  :class={`view ? 'xyz-in' : 'opacity-0'`}
+  xyz={anim}
+>
+  <slot />
+</div>
