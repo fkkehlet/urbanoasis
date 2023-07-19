@@ -1,7 +1,19 @@
 ---
-const { class: className = '' } = Astro.props;
+export interface Props {
+  span?: true;
+}
+
+const { span } = Astro.props;
 ---
 
-<div class={className} x-data="{ view: false }" x-intersect.once.margin.-30%.0="view = true">
-  <slot />
-</div>
+{
+  span ? (
+    <span x-data="{ view: false }" x-intersect.once.margin.-30%.0="view = true">
+      <slot />
+    </span>
+  ) : (
+    <div x-data="{ view: false }" x-intersect.once.margin.-30%.0="view = true">
+      <slot />
+    </div>
+  )
+}

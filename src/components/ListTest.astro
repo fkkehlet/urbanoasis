@@ -4,14 +4,16 @@ import EnterScale from '@effects/EnterScale.astro';
 const itemsList = ['1', '2', '3', '4', '5', '6', '7'];
 ---
 
-<Enter class="py-16">
-  {
-    itemsList.map((item, index) => {
-      return (
-        <EnterScale class={`delay-${index * 200}`}>
-          <p>{item}</p>
-        </EnterScale>
-      );
-    })
-  }
+<Enter>
+  <div class="py-16">
+    {
+      itemsList.map((item, index) => {
+        return (
+          <EnterScale delay={index * 200}>
+            <p>{item}</p>
+          </EnterScale>
+        );
+      })
+    }
+  </div>
 </Enter>

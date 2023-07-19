@@ -15,21 +15,21 @@ const { role, name, credentials, imgSrc } = Astro.props;
             class="absolute -left-2 -top-2 -z-10 box-content h-full w-full animate-spin-slow rounded-full bg-gradient-to-br from-zinc-400 to-zinc-950 p-2"
           >
           </div>
-          <EnterScale class="delay-200">
-            <Image class="rounded-full grayscale" src={imgSrc} format="jpg" alt="" />
+          <EnterScale delay={200}>
+            <Image class="rounded-full grayscale" src={imgSrc} format="jpg" alt={'Photo of ' + name} />
           </EnterScale>
         </div>
       </EnterScale>
     </div>
     <h3 class="-mt-12 w-full bg-zinc-950 pt-4 md:-mt-20 md:text-xl">
-      <EnterScale class="delay-400">
+      <EnterScale delay={400}>
         <strong>{role.toUpperCase()}</strong><br />
       </EnterScale>
-      <EnterScale class="delay-500">
+      <EnterScale delay={400}>
         {name}
       </EnterScale>
     </h3>
-    <EnterScale class="delay-600">
+    <EnterScale delay={600}>
       <p class="w-64 text-sm">{credentials}</p>
     </EnterScale>
   </div>

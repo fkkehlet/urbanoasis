@@ -2,7 +2,7 @@
 const { class: className = '' } = Astro.props;
 ---
 
-<div class={`animate duration-500 delay-200 motion-reduce:animate-none ${className}`} :class="{ 'trig': view }">
+<div class={`animate duration-1000 motion-reduce:animate-none ${className}`} :class="{ 'trig': view }">
   <slot />
 </div>
 

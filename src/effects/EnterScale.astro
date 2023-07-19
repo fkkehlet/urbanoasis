@@ -1,8 +1,11 @@
 ---
-const { class: className = '' } = Astro.props;
+const { duration = 1000, delay = 0 } = Astro.props;
 ---
 
-<div class={`init transition duration-1000 motion-reduce:transition-none ${className}`} :class="{ 'trig': view }">
+<div
+  class={`init transition duration-${duration} delay-${delay} motion-reduce:transition-none`}
+  :class="{ 'trig': view }"
+>
   <slot />
 </div>
 
